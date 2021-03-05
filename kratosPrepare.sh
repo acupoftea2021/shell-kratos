@@ -27,7 +27,7 @@ if [ ! -f "./${protocDownloadUrl##*/}" ]; then
   wget $protocDownloadUrl
   echo "download protoc completely"
 fi
-unzip "${protocDownloadUrl##*/}"
+unzip -o "${protocDownloadUrl##*/}"
 sudo cp -rf ./include/* /usr/local/include/
 cp -rf ./bin/protoc "$GOPATH"/bin/
 cp -rf ./include/google "$GOPATH"/src/google
